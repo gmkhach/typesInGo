@@ -12,10 +12,19 @@ var y = `"With the first link the chain is forged" - Aaron Satie`
 // You cannot assign anything but an int to x, and a string to y.
 
 func main() {
-	// Low format printing that shows the type of variable x
-	// %T indicates that the type of the variable should be printed 
+	// Using different verbs of format printing of fmt package
 	fmt.Println(x)
-	fmt.Printf("%T\n", x)
+	fmt.Printf("Type: %T\n", x)
+	fmt.Printf("In decimal: %v\n", x)
+	fmt.Printf("In binary: %#b\n", x)
+	fmt.Printf("In hexadecimal: %X\n", x)
+	fmt.Printf("In hexadecimal (go-syntax): %#X\n", x)
+
+	// The same can be achieved in one Printf statement, but a value needs to be passed for each verb
 	fmt.Println(y)
-	fmt.Printf("%T\n", y)
+	fmt.Printf("Type: %T\nValue: %v\nQuoted: %q\nHexadecimal: %X\n", y, y, y, y )
+
+	// You can also print into a string variable using Sprintf()
+	s := fmt.Sprintf("Integer: %v\tstring: %v", x, y)
+	fmt.Println(s)
 }
